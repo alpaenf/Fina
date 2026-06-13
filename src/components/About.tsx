@@ -18,7 +18,7 @@ export default function About() {
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1TOWvlZumSmRQ7dny64t9kyRwiB8lt-LsOLjShARuxOO3Mk8ikoBcQHCHugyF4li2qCkQdtfKV8d-4mX4Njue9eeSmpmLfyV7CREI60cfRsiDEeyBexB8Rub8lt-LsOLjShARuxOO3Mk8ikoBcQHCHugyF4li2qCkQdtfKV8d-4mX4Njue9eeSmpmLfyV7CREI60cfRsiDEeyBexB8pu0xT7MTOTICZAJXlqYTou0sFMwIph9JdbIPvqQQVqlPISU7jKP26MiQvS6UET8UrEqcehumF9VuRNPy3AzyN6Mx9H41rXjfTaSZ5HGq79YcLm7rwwREl5-1uZaqPLVbkWhX0XdCdt1onCtNzIYTaMQ"
+                src="/saya.png"
               />
             </div>
           </div>
