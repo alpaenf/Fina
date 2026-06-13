@@ -21,17 +21,18 @@ export default function Experience() {
   ];
 
   return (
-    <section className="py-stack-lg bg-surface-muted" id="pengalaman">
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+    <section className="py-20 lg:py-32 bg-surface-muted relative" id="pengalaman">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         
         <div className="text-center mb-16 reveal">
-          <span className="text-accent font-label-md tracking-widest uppercase mb-3 block">Journey</span>
-          <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface tracking-tight">
+          <span className="text-accent text-sm font-bold tracking-widest uppercase mb-3 block">Journey</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-on-surface tracking-tight">
             Pengalaman
           </h2>
         </div>
 
         <div className="max-w-3xl mx-auto">
+          {/* Vertical line indicator */}
           <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-outline-variant/60 before:to-transparent">
             {experiences.map((exp, index) => (
               <div 
@@ -45,19 +46,19 @@ export default function Experience() {
                 </div>
                 
                 {/* Content Card */}
-                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-surface border border-outline-variant/30 p-6 rounded-2xl soft-shadow group-hover:shadow-lg transition-all duration-300">
-                  <div className="flex flex-col mb-2">
-                    <span className="text-accent font-label-md text-[12px] tracking-wider mb-2">
+                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-surface border border-outline-variant/30 p-6 md:p-8 rounded-2xl soft-shadow group-hover:shadow-xl transition-all duration-300">
+                  <div className="flex flex-col mb-3">
+                    <span className="text-accent text-[12px] font-bold tracking-wider uppercase mb-2">
                       {exp.period}
                     </span>
-                    <h4 className="font-headline-sm text-[18px] text-on-surface leading-tight">
+                    <h4 className="text-lg md:text-xl font-bold text-on-surface leading-tight">
                       {exp.role}
                     </h4>
                   </div>
-                  <p className="text-on-surface-variant font-medium text-[13px] mb-3 uppercase tracking-wide">
+                  <p className="text-on-surface-variant font-bold text-[13px] mb-4 uppercase tracking-widest">
                     {exp.company}
                   </p>
-                  <p className="text-on-surface-variant text-sm leading-relaxed">
+                  <p className="text-on-surface-variant text-sm md:text-base leading-relaxed">
                     {exp.description}
                   </p>
                 </div>

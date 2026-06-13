@@ -20,48 +20,48 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-stack-lg bg-surface-muted relative" id="kontak">
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+    <section className="py-20 lg:py-32 bg-surface-muted relative" id="kontak">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           <div className="reveal">
-            <span className="text-accent font-label-md tracking-widest uppercase mb-3 block">Get in Touch</span>
-            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-6 tracking-tight">
+            <span className="text-accent text-sm font-bold tracking-widest uppercase mb-3 block">Get in Touch</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-on-surface mb-6 tracking-tight">
               Mari Berkolaborasi!
             </h2>
-            <p className="font-body-md text-on-surface-variant mb-10 max-w-md">
+            <p className="text-base text-on-surface-variant mb-10 max-w-md">
               Tertarik untuk bekerja sama, berdiskusi mengenai proyek, atau sekadar menyapa? Jangan ragu untuk menghubungi saya melalui formulir ini atau langsung melalui email.
             </p>
             
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-sm">
+            <div className="space-y-6 md:space-y-8">
+              <div className="flex items-center md:items-start space-x-4">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-sm shrink-0">
                   <span className="material-symbols-outlined">mail</span>
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-on-surface uppercase tracking-wider mb-1">Email</h4>
-                  <a href="mailto:hello@finajulianti.com" className="text-on-surface-variant hover:text-accent transition-colors">
+                  <h4 className="text-xs font-bold text-on-surface uppercase tracking-wider mb-1">Email</h4>
+                  <a href="mailto:hello@finajulianti.com" className="text-sm md:text-base font-semibold text-on-surface-variant hover:text-accent transition-colors">
                     hello@finajulianti.com
                   </a>
                 </div>
               </div>
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-sm">
+              <div className="flex items-center md:items-start space-x-4">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-sm shrink-0">
                   <span className="material-symbols-outlined">location_on</span>
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-on-surface uppercase tracking-wider mb-1">Lokasi</h4>
-                  <p className="text-on-surface-variant">
-                    Jakarta, Indonesia <br/> (Available for remote work)
+                  <h4 className="text-xs font-bold text-on-surface uppercase tracking-wider mb-1">Lokasi</h4>
+                  <p className="text-sm md:text-base font-semibold text-on-surface-variant">
+                    Jakarta, Indonesia <br className="hidden md:block"/> <span className="font-normal">(Available for remote work)</span>
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="reveal delay-100">
-            <form onSubmit={handleSubmit} className="bg-white p-8 md:p-10 rounded-[32px] soft-shadow border border-outline-variant/30">
-              <h3 className="font-headline-sm text-2xl mb-8 text-on-surface">Kirim Pesan</h3>
+          <div className="reveal delay-100 mt-12 lg:mt-0">
+            <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-8 md:p-12 rounded-[32px] soft-shadow border border-outline-variant/30">
+              <h3 className="text-2xl font-bold mb-8 text-on-surface">Kirim Pesan</h3>
               
               <div className="space-y-6">
                 <div>
@@ -70,7 +70,7 @@ export default function Contact() {
                     type="text"
                     id="name"
                     required
-                    className="w-full bg-surface-muted border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
+                    className="w-full bg-surface-muted border border-outline-variant/50 rounded-xl px-4 py-3 text-sm md:text-base text-on-surface focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
                     placeholder="Masukkan nama Anda"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -82,7 +82,7 @@ export default function Contact() {
                     type="email"
                     id="email"
                     required
-                    className="w-full bg-surface-muted border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
+                    className="w-full bg-surface-muted border border-outline-variant/50 rounded-xl px-4 py-3 text-sm md:text-base text-on-surface focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
                     placeholder="email@anda.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -94,7 +94,7 @@ export default function Contact() {
                     id="message"
                     required
                     rows={4}
-                    className="w-full bg-surface-muted border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all resize-none"
+                    className="w-full bg-surface-muted border border-outline-variant/50 rounded-xl px-4 py-3 text-sm md:text-base text-on-surface focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all resize-none"
                     placeholder="Ceritakan tentang proyek Anda..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -104,7 +104,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full py-4 rounded-xl font-label-md text-[14px] flex items-center justify-center space-x-2 transition-all duration-300 ${
+                  className={`w-full py-4 rounded-xl text-sm font-bold flex items-center justify-center space-x-2 transition-all duration-300 ${
                     isSubmitting ? "bg-outline text-on-surface-variant cursor-not-allowed" : "bg-primary text-primary-inverse hover:bg-accent hover:shadow-lg"
                   }`}
                 >
@@ -113,7 +113,7 @@ export default function Contact() {
                 </button>
 
                 {submitStatus === "success" && (
-                  <div className="p-4 bg-green-50 text-green-700 rounded-xl text-sm text-center border border-green-200 animate-fade-in-up">
+                  <div className="p-4 bg-green-50 text-green-700 rounded-xl text-sm font-semibold text-center border border-green-200 animate-fade-in-up">
                     Pesan Anda berhasil dikirim! Saya akan segera merespons.
                   </div>
                 )}

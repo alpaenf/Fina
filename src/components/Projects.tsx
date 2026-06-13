@@ -50,13 +50,13 @@ export default function Projects({ onNavClick }: ProjectsProps) {
   const filteredProjects = filter === "Semua" ? projects : projects.filter(p => p.category === filter);
 
   return (
-    <section className="py-stack-lg bg-background" id="proyek">
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+    <section className="py-20 lg:py-32 bg-background" id="proyek">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         
         {/* Header */}
         <div className="text-center mb-12 reveal">
-          <span className="text-accent font-label-md tracking-widest uppercase mb-3 block">Portfolio</span>
-          <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-6 tracking-tight">
+          <span className="text-accent text-sm font-bold tracking-widest uppercase mb-3 block">Portfolio</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-on-surface mb-6 tracking-tight">
             Proyek Pilihan
           </h2>
           
@@ -66,9 +66,9 @@ export default function Projects({ onNavClick }: ProjectsProps) {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-5 py-2 rounded-full font-label-md text-[13px] transition-all duration-300 ${
+                className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                   filter === cat 
-                    ? "bg-primary text-primary-inverse" 
+                    ? "bg-primary text-primary-inverse shadow-md" 
                     : "bg-surface border border-outline-variant/40 text-on-surface-variant hover:border-outline hover:text-on-surface"
                 }`}
               >
@@ -94,25 +94,25 @@ export default function Projects({ onNavClick }: ProjectsProps) {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <a href="#kontak" onClick={(e) => onNavClick(e, "kontak")} className="w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center hover:bg-accent hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300">
-                    <span className="material-symbols-outlined text-[20px]">arrow_outward</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <a href="#kontak" onClick={(e) => onNavClick(e, "kontak")} className="w-12 h-12 bg-white text-primary rounded-full flex items-center justify-center hover:bg-accent hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300 shadow-lg">
+                    <span className="material-symbols-outlined text-[24px]">arrow_outward</span>
                   </a>
                 </div>
               </div>
-              <div className="p-6">
-                <p className="text-accent text-[12px] font-bold tracking-wider uppercase mb-2">
+              <div className="p-6 md:p-8">
+                <p className="text-accent text-[11px] font-extrabold tracking-widest uppercase mb-2">
                   {project.category}
                 </p>
-                <h3 className="font-headline-sm text-[20px] text-on-surface mb-3 group-hover:text-accent transition-colors">
+                <h3 className="text-xl md:text-2xl font-bold text-on-surface mb-3 group-hover:text-accent transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-on-surface-variant text-sm mb-5 line-clamp-2">
+                <p className="text-on-surface-variant text-sm md:text-base leading-relaxed mb-6 line-clamp-2">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1 bg-surface-muted text-on-surface-variant text-[11px] font-medium rounded-md border border-outline-variant/50">
+                    <span key={tag} className="px-3 py-1 bg-surface-muted text-on-surface-variant text-[11px] font-bold rounded-md border border-outline-variant/50 uppercase tracking-wider">
                       {tag}
                     </span>
                   ))}
