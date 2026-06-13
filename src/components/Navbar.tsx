@@ -7,8 +7,8 @@ interface NavbarProps {
 }
 
 export default function Navbar({ activeSection, scrolled, onNavClick }: NavbarProps) {
-  const navLinks = [
-    { id: "home", label: "Home" },
+  const navItems = [
+    { id: "home", label: "Beranda" },
     { id: "tentang", label: "Tentang" },
     { id: "layanan", label: "Layanan" },
     { id: "proyek", label: "Proyek" },
@@ -18,43 +18,61 @@ export default function Navbar({ activeSection, scrolled, onNavClick }: NavbarPr
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out ${
         scrolled
-          ? "bg-surface/95 backdrop-blur-md border-outline-variant/20 shadow-md h-16"
-          : "bg-surface/90 backdrop-blur-md border-outline-variant/10 shadow-sm h-20"
+          ? "bg-white/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm py-4"
+          : "bg-transparent py-6"
       }`}
     >
-      <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-full">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center">
+        {/* Logo / Brand Name */}
         <a
-          className="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface hover:text-secondary transition-colors"
           href="#home"
           onClick={(e) => onNavClick(e, "home")}
+          className="font-headline-sm text-headline-sm tracking-tight text-on-surface hover:text-accent transition-colors"
         >
-          Fina Julianti
+          Fina<span className="text-accent">.</span>
         </a>
-        <div className="hidden md:flex items-center gap-stack-md">
-          {navLinks.map((link) => (
-            <a
-              key={link.id}
-              href={`#${link.id}`}
-              onClick={(e) => onNavClick(e, link.id)}
-              className={`transition-colors duration-300 font-label-md text-label-md ${
-                activeSection === link.id
-                  ? "text-secondary font-bold border-b-2 border-secondary pb-1"
-                  : "text-on-surface-variant font-medium hover:text-secondary"
-              }`}
-            >
-              {link.label}
-            </a>
+
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex space-x-8 items-center">
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                onClick={(e) => onNavClick(e, item.id)}
+                className={`font-label-md text-label-md transition-all duration-300 relative group ${
+                  activeSection === item.id
+                    ? "text-accent"
+                    : "text-on-surface-variant hover:text-on-surface"
+                }`}
+              >
+                {item.label}
+                <span
+                  className={`absolute -bottom-1 left-0 w-full h-[2px] bg-accent transition-transform duration-300 origin-left ${
+                    activeSection === item.id ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                ></span>
+              </a>
+            </li>
           ))}
+        </ul>
+
+        {/* Call to Action Button */}
+        <div className="hidden md:block">
+          <a
+            href="#kontak"
+            onClick={(e) => onNavClick(e, "kontak")}
+            className="px-6 py-2.5 rounded-full bg-primary text-primary-inverse font-label-md text-label-md hover:bg-accent hover:shadow-lg transition-all duration-300"
+          >
+            Hire Me
+          </a>
         </div>
-        <a
-          href="#kontak"
-          onClick={(e) => onNavClick(e, "kontak")}
-          className="bg-rose-pink text-white px-6 py-2.5 rounded-full font-label-md text-label-md hover:bg-secondary transition-all active:scale-95 shadow-sm hover:shadow-md hover:translate-y-[-1px]"
-        >
-          Let's Talk
-        </a>
+
+        {/* Mobile Menu Icon (Placeholder for simplicity) */}
+        <button className="md:hidden text-on-surface p-2">
+          <span className="material-symbols-outlined text-[28px]">menu</span>
+        </button>
       </div>
     </nav>
   );

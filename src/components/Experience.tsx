@@ -4,86 +4,63 @@ export default function Experience() {
       period: "2023 - Sekarang",
       role: "Internship Product Designer",
       company: "Creative Agency XYZ",
-      description: "Bertanggung jawab dalam merancang user flow dan prototyping untuk klien-klien tier-1.",
-      align: "right", // align timeline text relative to center line on desktop
+      description: "Membantu merancang antarmuka pengguna untuk aplikasi klien korporat. Melakukan user research dasar dan menyusun wireframe interaktif."
     },
     {
       period: "2022 - 2023",
-      role: "Ketua Divisi Kreatif",
+      role: "Ketua Divisi Komunikasi",
       company: "BEM Fakultas",
-      description: "Memimpin tim 15 orang dalam produksi konten digital untuk acara-acara berskala nasional.",
-      align: "left",
+      description: "Memimpin tim beranggotakan 10 orang untuk mengelola seluruh kanal media sosial fakultas. Meningkatkan engagement rate Instagram sebesar 45%."
     },
     {
       period: "2021 - 2022",
-      role: "Relawan Digital Marketing",
-      company: "NGO Lingkungan Hidup",
-      description: "Membantu meningkatkan awareness kampanye melalui optimalisasi platform media sosial.",
-      align: "right",
-    },
+      role: "Freelance Social Media Specialist",
+      company: "Berbagai UMKM Lokal",
+      description: "Menyusun strategi konten dan kalender editorial untuk 3 UMKM, membantu mereka membangun brand identity digital dari nol."
+    }
   ];
 
   return (
-    <section className="py-stack-lg" id="pengalaman">
+    <section className="py-stack-lg bg-surface-muted" id="pengalaman">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <div className="text-center mb-stack-lg reveal">
-          <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4">
+        
+        <div className="text-center mb-16 reveal">
+          <span className="text-accent font-label-md tracking-widest uppercase mb-3 block">Journey</span>
+          <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface tracking-tight">
             Pengalaman
           </h2>
-          <div className="h-1 w-20 bg-rose-pink mx-auto rounded-full"></div>
         </div>
-        <div className="relative max-w-4xl mx-auto">
-          {/* Timeline Center Line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-soft-pink/30 -translate-x-1/2 hidden md:block"></div>
-          
-          <div className="space-y-stack-md">
+
+        <div className="max-w-3xl mx-auto">
+          <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-outline-variant/60 before:to-transparent">
             {experiences.map((exp, index) => (
-              <div
-                key={exp.role}
-                className="relative flex flex-col md:flex-row items-center md:justify-between group reveal"
+              <div 
+                key={index} 
+                className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group reveal is-active`}
+                style={{ transitionDelay: `${index * 150}ms` }}
               >
-                {/* Desktop Left Side Period (for right-aligned cards) */}
-                {exp.align === "right" ? (
-                  <div className="hidden md:block w-[45%] text-right pr-stack-md">
-                    <span className="text-rose-pink font-label-md text-label-md font-semibold">
+                {/* Timeline Icon */}
+                <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-surface-muted bg-surface text-accent shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-transform group-hover:scale-110 group-hover:bg-accent group-hover:text-white group-hover:border-accent-soft">
+                  <span className="material-symbols-outlined text-[16px]">work</span>
+                </div>
+                
+                {/* Content Card */}
+                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-surface border border-outline-variant/30 p-6 rounded-2xl soft-shadow group-hover:shadow-lg transition-all duration-300">
+                  <div className="flex flex-col mb-2">
+                    <span className="text-accent font-label-md text-[12px] tracking-wider mb-2">
                       {exp.period}
                     </span>
+                    <h4 className="font-headline-sm text-[18px] text-on-surface leading-tight">
+                      {exp.role}
+                    </h4>
                   </div>
-                ) : (
-                  <div className="hidden md:block w-[45%]"></div>
-                )}
-
-                {/* Timeline Pin */}
-                <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-white border-2 border-rose-pink rounded-full -translate-x-1/2 z-10 hidden md:block group-hover:bg-rose-pink transition-colors"></div>
-
-                {/* Card Container */}
-                <div
-                  className={`md:w-[45%] bg-white p-6 rounded-xl soft-shadow relative w-full border border-outline-variant/10 hover:border-rose-pink/20 transition-all hover:shadow-md ${
-                    exp.align === "right" ? "md:ml-stack-md" : "md:mr-stack-md text-left md:text-right"
-                  }`}
-                >
-                  <span className="md:hidden text-rose-pink font-label-md text-label-md mb-2 block font-semibold">
-                    {exp.period}
-                  </span>
-                  <h4 className="font-headline-sm text-[20px] mb-1 font-bold">
-                    {exp.role}
-                  </h4>
-                  <p className="text-secondary font-medium text-sm mb-3">{exp.company}</p>
+                  <p className="text-on-surface-variant font-medium text-[13px] mb-3 uppercase tracking-wide">
+                    {exp.company}
+                  </p>
                   <p className="text-on-surface-variant text-sm leading-relaxed">
                     {exp.description}
                   </p>
                 </div>
-
-                {/* Desktop Right Side Period (for left-aligned cards) */}
-                {exp.align === "left" ? (
-                  <div className="hidden md:block w-[45%] text-left pl-stack-md">
-                    <span className="text-rose-pink font-label-md text-label-md font-semibold">
-                      {exp.period}
-                    </span>
-                  </div>
-                ) : (
-                  <div className="hidden md:block w-[45%]"></div>
-                )}
               </div>
             ))}
           </div>
