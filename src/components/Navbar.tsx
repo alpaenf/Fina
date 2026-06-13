@@ -16,6 +16,7 @@ export default function Navbar({ activeSection, scrolled, onNavClick }: NavbarPr
     { id: "tentang", label: "Tentang" },
     { id: "layanan", label: "Layanan" },
     { id: "proyek", label: "Proyek" },
+    { id: "sertifikat", label: "Sertifikat" },
     { id: "pengalaman", label: "Pengalaman" },
     { id: "kontak", label: "Kontak" },
   ];

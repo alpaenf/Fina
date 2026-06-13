@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Projects from "@/components/Projects";
+import Certificates from "@/components/Certificates";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
@@ -27,7 +28,7 @@ export default function Home() {
 
       // Detect active section based on current scroll position
       const scrollPos = window.scrollY + 150;
-      const sections = ["home", "tentang", "layanan", "proyek", "pengalaman", "kontak"];
+      const sections = ["home", "tentang", "layanan", "proyek", "sertifikat", "pengalaman", "kontak"];
       
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
@@ -101,6 +102,7 @@ export default function Home() {
         <About />
         <Services onNavClick={handleNavClick} />
         <Projects onNavClick={handleNavClick} />
+        <Certificates />
         <Experience />
         <Skills />
         <Contact />
